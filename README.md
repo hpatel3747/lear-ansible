@@ -23,8 +23,55 @@ Needs inventory
 need CM server with Ansible installed
 Ansible requires >Python 3.10
 Create Workstation as Configuration Manager server
-install python
+**install python**
 #sudo dnf list | grep python # see whats available
 #sudo dnf list | grep ansible # see what ansible is installed
-latest version is ansible core 2.17 
+latest version is ansible core 2.17
+# python --> shows python version
+# pip --> shows availble pips
+# sudo pip3.11 install ansible ansible-core --> to install Ansible
+# ansible --version --> check version
+
+create other nodes
+create inventory file /tmp/inv
+add ips in the inventory
+
+[frontend]
+10.0.0.6
+10.0.0.7
+[cart]
+10.0.0.10
+
+above is for static ip inventory
+in cloud ip may change
+so go for dynamic inventory
+**To connect to servers listed in inventory**
+#ansible -i /tmp/inv -e ansible_user=ec2-user -e ansible_pass=DevOps321 -m ping --> will connect to all the servers listed in the /inv file over ssh and do ping
+instead of /inv you can provide ip of servers sperated by commas
+-m is also called as collection
+-b become sudo
+dnf collection ansible - search in google and it will show
+#ansible -i /tmp/inv -e -b ansible_user=ec2-user -e ansible_pass=DevOps321 -m ansible.builtin.dnf -a name=nginx,state=present --> installs nginx on the servers in the inventory
+search for systemctl collection ansible
+ansible.builtin.systemd_service
+write in file format called playbook
+vim /tpm/test.yml
+ -host: all
+  become: yes
+  tasks:
+ - name:install nginx
+   ansible.builtin.dnf:
+    name: nginx
+    state: installed
+    
+   -name: start nginx
+    ansible.builtin.systemd_service:
+     name: nginx
+     state: started
+ 
+ #ansible-playbook -i 172.32.24.248, -e ansible_user=ec2-user -e ansible_password=DevOps321 /emp/test.yml
+```
+### Markup language
+```text
+
 ```
