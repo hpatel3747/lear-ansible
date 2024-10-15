@@ -115,4 +115,45 @@ some values are also provided by ansible
  every play starts with name - it not mandatory
  host is must and should
  either tasks/roles is must to have 
+ spaces are very important in yaml (not a tab)
+ 
+```
+### list of Ansible Modules
+```text
+ansible.builtin.dnf
+ansible.builtin.copy
+ansible.builtin.shell
+ansible.builtin.debug
+ansible.builtin.template
+ansible.builtin.file
+ansible.builtin.unarchive
+```
+### Ansible variable
+```text
+create 01-variable.yml
+- name: demo on variable
+  hosts: all
+  connection: local --> this will run ansible locally instead of ssh on remote server
+  vars:
+    URL: vars.google.com
+  tasks:
+    - name: Print URL
+    ansible.builtin.debug:
+      msg: URL - {{ URL }}  
+# two {{ }} flower brackets are used to show variable value, just like $ sign in shell
+then run playbook on workstation
+# git pull ; ansible-playbook 02-variable.yml
+
+you can also specify variable on command line 
+
+#git pull ; ansible-playbook 02-variable.yml -e URL=cli.google.com
+-e means encvronment data in ansible
+```
+### function
+```text
+ansible roles are function equivalent
+by default ansible will look for main.yml in the directory..
+create directory structure
+roles/sample/tasks/main.yml
+
 ```
