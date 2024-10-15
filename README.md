@@ -70,8 +70,49 @@ vim /tpm/test.yml
      state: started
  
  #ansible-playbook -i 172.32.24.248, -e ansible_user=ec2-user -e ansible_password=DevOps321 /emp/test.yml
+ 
 ```
 ### Markup language
 ```text
+yaml is markup language
+standard is required for processing
 
+HTML
+eXtensible Markup language (XML)
+Java script object notation (JSON)
+YAML
+
+-plain
+-list
+-MAP/Dictionary
+
+XML
+<key>Value</key>
+<a>10</a>
+
+JSON
+{
+    "a" = 10
+}
+
+YAML
+a: 10
+b: [ 99,89 ]
+b:
+ - 99
+ - 89
+c:
+ course: DevOps
+ time: 730am
+
+c: { course: DevOps, 
+time: 730am }
+
+keys are provided by ansible
+some values are also provided by ansible
+ it can be in.yaml or .yml
+ there are multiple plays
+ every play starts with name - it not mandatory
+ host is must and should
+ either tasks/roles is must to have 
 ```
