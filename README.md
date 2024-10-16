@@ -23,9 +23,10 @@ Needs inventory
 need CM server with Ansible installed
 Ansible requires >Python 3.10
 Create Workstation as Configuration Manager server
+```
 
-**install python**
-
+### **install python**
+```text
 #sudo dnf list | grep python # see whats available
 
 #sudo dnf list | grep ansible # see what ansible is installed
@@ -39,8 +40,11 @@ latest version is ansible core 2.17
 
 # sudo pip3.11 install ansible ansible-core --> to install Ansible
 # ansible --version --> check version
+```
 
-create other nodes
+#### **create other nodes**
+```text
+
 create inventory file /tmp/inv
 add ips in the inventory
 
@@ -53,7 +57,10 @@ add ips in the inventory
 above is for static ip inventory
 in cloud ip may change
 so go for dynamic inventory
-**To connect to servers listed in inventory**
+```
+
+#### **To connect to servers listed in inventory**
+```text
 #ansible -i /tmp/inv -e ansible_user=ec2-user -e ansible_pass=DevOps321 -m ping --> will connect to all the servers listed in the /inv file over ssh and do ping
 instead of /inv you can provide ip of servers sperated by commas
 -m is also called as collection
@@ -78,7 +85,6 @@ vim /tpm/test.yml
      state: started
  
  #ansible-playbook -i 172.32.24.248, -e ansible_user=ec2-user -e ansible_password=DevOps321 /emp/test.yml
- 
 ```
 ### Markup language
 ```text
@@ -124,7 +130,6 @@ some values are also provided by ansible
  host is must and should
  either tasks/roles is must to have 
  spaces are very important in yaml (not a tab)
- 
 ```
 ### list of Ansible Modules
 ```text
