@@ -23,12 +23,20 @@ Needs inventory
 need CM server with Ansible installed
 Ansible requires >Python 3.10
 Create Workstation as Configuration Manager server
+
 **install python**
+
 #sudo dnf list | grep python # see whats available
+
 #sudo dnf list | grep ansible # see what ansible is installed
 latest version is ansible core 2.17
-# python --> shows python version
-# pip --> shows availble pips
+
+# python3 --version #shows python version
+
+# pip list #shows available pips
+
+# sudo dnf install python3.12 #Install python version 3.12
+
 # sudo pip3.11 install ansible ansible-core --> to install Ansible
 # ansible --version --> check version
 
