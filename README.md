@@ -55,8 +55,6 @@ add ips in the inventory
 10.0.0.10
 
 above is for static ip inventory
-in cloud ip may change
-so go for dynamic inventory
 ```
 
 #### **To connect to servers listed in inventory**
