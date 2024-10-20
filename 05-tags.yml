@@ -1,0 +1,17 @@
+- name: Demo on tags
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Install nginx
+      ansible.builtin.debug:
+        msg: Installed Nginx
+      tags:
+        - install
+
+    - name: Start nginx
+      ansible.builtin.debug:
+        msg: Started Nginx
+      tags:
+        - service
+        - systemd
+# If a tag is not given, then irrespective of any tag value that task will run.debug
