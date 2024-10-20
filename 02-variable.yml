@@ -10,6 +10,34 @@
 
   # Here in the above msg line, we have the value starting with a string URL , But if a value staring with a variable then we need to quote it
   # msg: "{{ URL }}" , Must and should double quote if the value starts with variable in ansible
+- name: Demo on variables - from task
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Print URL
+      ansible.builtin.debug:
+        msg: URL - {{ URL }}
+      vars:
+        URL: tasks.google.com
 
+- name: Demo on variables - Role variables
+  hosts: localhost
+  connection: local
+  roles:
+    - sample
+# Variable types
+# 1. Plain
+# url: example.com
+# 2. List
+# urls:
+#   - example.com
+#   - test.com
+# 3. Map
+# domain_urls:
+#   example: example.com
+#   test: test.com
 
-
+# Variable Data types
+# 1. String
+# 2. NUmber
+# 3. Booleans
