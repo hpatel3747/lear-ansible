@@ -1,0 +1,31 @@
+# conditions is to determine whether we can run the task or skip it
+- name: Demo on conditions
+  hosts: localhost
+  connection: local
+  vars:
+    to_install: true
+    # ansible booleans are true / false or yes / no , Anything is fine
+  tasks:
+- name: Print OS Redhat
+  ansible.builtin.debug:
+  msg: Redhat
+  when: os == "redhat"
+
+- name: Print OS Ubuntu
+  ansible.builtin.debug:
+    msg: Ubuntu
+  when: os == "ubuntu"
+
+-   name: Get reminder
+    ansible.builtin.shell: echo $(({{number}}%2))
+    register: reminder
+
+-   name: Print Even Number
+    ansible.builtin.debug:
+      msg: Number {{ number }} is even
+    when: reminder.stdout == "0"
+
+-   name: Boolean condition
+    ansible.builtin.debug:
+      msg:  to_install - true
+    when: to_install
