@@ -1,0 +1,11 @@
+- name: Error Handling
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Fail this command
+      ansible.builtin.shell: exit 1
+      ignore_errors: true
+
+    - name: Print Hello
+      ansible.builtin.debug:
+        msg: Hello
