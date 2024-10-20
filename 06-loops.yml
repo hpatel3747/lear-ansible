@@ -1,4 +1,4 @@
-- name: Demon on loops
+- name: Demo on loops
   hosts: localhost
   connection: local
   tasks:
