@@ -6,4 +6,3 @@
       ansible.builtin.debug:
         msg: "{{ lookup('hashi_vault', 'test/data/my_credentials:password token={{ vault_token }} url=https://172.31.26.205:8200 validate_certs=False')}}"
 
-# git pull ; ansible-playbook 10-hashicorp-vault.yml -e vault_token=
