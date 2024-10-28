@@ -237,3 +237,21 @@ ansible-doc -F
 ```text
 ansible-doc -t module -l
 ```
+#### running playbook in check mode
+```text
+ansible-playbook --check playbook.yaml
+```
+#### get ansible specific feed on a playbook
+```text
+$ ansible-lint verify-apache.yml
+[403] Package installs should not use latest
+verify-apache.yml:8
+Task/Handler: ensure apache is at the latest version
+```
+#### setting PATh environment variable
+```text
+hosts: servers
+environment:
+  PATH: "{{ ansible_env.PATH }}:/thingy/bin"
+  SOME: value
+```
