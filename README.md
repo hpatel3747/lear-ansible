@@ -139,7 +139,29 @@ ansible.builtin.debug
 ansible.builtin.template
 ansible.builtin.file
 ansible.builtin.unarchive
+ansible.builtin.user # to manage users ad groups
+ansible.builtin.service # to manage service
+ansible.builtin.setup # to get ad hoc information about system
 ```
+### Ansible Utilities
+```text
+ansible
+ansible-config
+ansible-console
+ansible-doc
+ansible-galaxy
+ansible-inventory
+ansible-playbook
+ansible-pull
+ansible-vault
+```
+### Ansible Default Files
+```text
+/etc/ansible/hosts – Default inventory file
+/etc/ansible/ansible.cfg – Config file, used if present
+~/.ansible.cfg – User config file, overrides the default config if present
+```
+
 ### Ansible variable
 ```text
 create 01-variable.yml
