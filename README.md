@@ -54,7 +54,8 @@ add ips in the inventory
 [cart]
 10.0.0.10
 
-above is for static ip inventory
+# To apply playbook using above inventory file to frontend servers, applying site.yml playbook
+$ansible-playbook -i /tmp/inv -l frontend site.yml
 ```
 
 #### **To connect to servers listed in inventory**
