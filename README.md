@@ -145,15 +145,15 @@ ansible.builtin.setup # to get ad hoc information about system
 ```
 ### Ansible Utilities
 ```text
-ansible
-ansible-config
-ansible-console
-ansible-doc
-ansible-galaxy
-ansible-inventory
-ansible-playbook
-ansible-pull
-ansible-vault
+ansible  #Define and run a single task ‘playbook’ against a set of hosts
+ansible-config  #View ansible configuration
+ansible-console  #REPL console for executing Ansible tasks
+ansible-doc  #plugin documentation tool
+ansible-galaxy  #Perform various Role and Collection related operations.
+ansible-inventory  #Show Ansible inventory information, by default it uses the inventory script JSON format
+ansible-playbook  #Runs Ansible playbooks, executing the defined tasks on the targeted hosts
+ansible-pull  #pulls playbooks from a VCS repo and executes them on target host
+ansible-vault  #encryption/decryption utility for Ansible data files
 ```
 ### Ansible Default Files
 ```text
