@@ -215,3 +215,25 @@ roles/
     monitoring/           # ""
     fooapp/               # ""
 ```
+### ansible examples
+
+#### list all installed collection
+```text
+ansible-galaxy collection list
+```
+#### list all installed roles
+```text
+ansible-galaxy role list
+```
+#### install a package
+```text
+ansible localhost -m ansible.builtin.apt -a "name=apache2 state=present" -b -K
+```
+#### show plugin names and thier source files
+```text
+ansible-doc -F
+```
+#### show available plugins
+```text
+ansible-doc -t module -l
+```
