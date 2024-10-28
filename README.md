@@ -248,7 +248,7 @@ $ ansible-lint verify-apache.yml
 verify-apache.yml:8
 Task/Handler: ensure apache is at the latest version
 ```
-#### setting PATh environment variable
+#### setting PATH environment variable
 ```text
 hosts: servers
 environment:
