@@ -248,3 +248,9 @@ environment:
   PATH: "{{ ansible_env.PATH }}:/thingy/bin"
   SOME: value
 ```
+#### unseal vault from commandline
+```text
+#login to vault server
+$sudo -i
+#VAULT_ADDR://127.0.0.1:8200 vault operator unseal 0d76651d1698321....type_in_entire_unseal_key
+```
